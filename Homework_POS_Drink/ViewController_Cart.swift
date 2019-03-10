@@ -21,10 +21,11 @@ class ViewController_Cart: UIViewController,UITableViewDelegate,UITableViewDataS
     
     ////結帳
     @IBAction func btn_amount_Click(_ sender: Any) {
-        self.strOrder += "\n\n合計：\(money[3])元"
+        
         let alertController = UIAlertController(title: "送出確認", message: "您確認要送出訂單嗎？", preferredStyle: UIAlertController.Style.actionSheet)
         //確定
         let okAction = UIAlertAction(title: "確認", style: UIAlertAction.Style.destructive, handler: {(action) -> Void in
+            self.strOrder += "\n\n合計：\(self.money[3])元"
             let alertControllerOrderForm = UIAlertController(title: "iii飲料訂購單", message: self.strOrder, preferredStyle: UIAlertController.Style.alert)
             let okActionOrder = UIAlertAction(title: "確認", style: UIAlertAction.Style.default, handler: {(actionOrder) -> Void in
                 self.navigationItem.prompt = "訂購成功"
